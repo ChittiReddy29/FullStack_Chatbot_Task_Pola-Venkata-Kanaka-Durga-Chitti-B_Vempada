@@ -1,0 +1,329 @@
+{
+  "info": {
+    "_postman_id": "a9d7b102-d961-4fa3-b68c-9c021f11a8b3",
+    "name": "DroneTV AI Support & Lead Assistant API",
+    "description": "Complete Postman API Collection for DroneTV Full Stack Lead Assistant & AI Chatbot system. Covers all health, public lead capture, chatbot rule evaluation, and administrative CRUD operations.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api",
+      "type": "string"
+    },
+    {
+      "key": "adminKey",
+      "value": "droneTV_admin_key_2026",
+      "type": "string"
+    },
+    {
+      "key": "enquiryId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "System Health",
+      "item": [
+        {
+          "name": "1. Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            },
+            "description": "Checks the operational status of the DroneTV backend server and database connectivity."
+          },
+          "response": [
+            {
+              "name": "200 Health OK",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"online\",\n  \"system\": \"DroneTV AI Support & Lead Assistant API\",\n  \"timestamp\": \"2026-10-10T05:30:00.000Z\",\n  \"environment\": \"development\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lead Enquiries (Public & Admin)",
+      "item": [
+        {
+          "name": "2. Submit Lead Enquiry (Public)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData && jsonData.data && jsonData.data._id) {",
+                  "    pm.collectionVariables.set('enquiryId', jsonData.data._id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Aarav Sharma\",\n  \"email\": \"aarav.sharma@example.com\",\n  \"phone\": \"+91 98765 43210\",\n  \"userType\": \"Student\",\n  \"interest\": \"DGCA Certified Drone Pilot Training\",\n  \"message\": \"I would like to apply for the upcoming batch of DGCA pilot certification course.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/enquiries",
+              "host": ["{{baseUrl}}"],
+              "path": ["enquiries"]
+            },
+            "description": "Public submission endpoint for candidates and prospective enterprise clients to submit enquiries."
+          },
+          "response": [
+            {
+              "name": "201 Created",
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Enquiry submitted successfully! Our DroneTV team will contact you shortly.\",\n  \"data\": {\n    \"_id\": \"6614a8b7e4b0123456789abc\",\n    \"name\": \"Aarav Sharma\",\n    \"email\": \"aarav.sharma@example.com\",\n    \"phone\": \"+91 98765 43210\",\n    \"userType\": \"Student\",\n    \"interest\": \"DGCA Certified Drone Pilot Training\",\n    \"message\": \"I would like to apply for the upcoming batch of DGCA pilot certification course.\",\n    \"status\": \"New\",\n    \"adminNotes\": \"\",\n    \"createdAt\": \"2026-10-10T05:30:00.000Z\",\n    \"updatedAt\": \"2026-10-10T05:30:00.000Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "3. Get All Enquiries (Admin Protected)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-admin-key",
+                "value": "{{adminKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/enquiries?q=&userType=Student&status=New&page=1&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["enquiries"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "",
+                  "description": "Search term across name, email, phone, or message"
+                },
+                {
+                  "key": "userType",
+                  "value": "Student",
+                  "description": "Filter by Student, Customer, or Other"
+                },
+                {
+                  "key": "status",
+                  "value": "New",
+                  "description": "Filter by New, Contacted, In Progress, Closed"
+                },
+                {
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination"
+                },
+                {
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Records per page"
+                }
+              ]
+            },
+            "description": "Protected administrative endpoint to retrieve, filter, search, and paginate through leads. Includes overall status counts."
+          },
+          "response": [
+            {
+              "name": "200 Success List",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"count\": 1,\n  \"total\": 1,\n  \"page\": 1,\n  \"totalPages\": 1,\n  \"statusCounts\": {\n    \"New\": 1,\n    \"Contacted\": 2,\n    \"In Progress\": 1,\n    \"Closed\": 1\n  },\n  \"data\": [\n    {\n      \"_id\": \"6614a8b7e4b0123456789abc\",\n      \"name\": \"Aarav Sharma\",\n      \"email\": \"aarav.sharma@example.com\",\n      \"phone\": \"+91 98765 43210\",\n      \"userType\": \"Student\",\n      \"interest\": \"DGCA Certified Drone Pilot Training\",\n      \"message\": \"I would like to apply for the upcoming batch of DGCA pilot certification course.\",\n      \"status\": \"New\",\n      \"adminNotes\": \"\",\n      \"createdAt\": \"2026-10-10T05:30:00.000Z\",\n      \"updatedAt\": \"2026-10-10T05:30:00.000Z\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "4. Get Single Enquiry By ID (Admin Protected)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-admin-key",
+                "value": "{{adminKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/enquiries/{{enquiryId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["enquiries", "{{enquiryId}}"]
+            },
+            "description": "Fetches complete record details for a specific enquiry using its unique MongoDB ObjectId."
+          },
+          "response": [
+            {
+              "name": "200 Success Detail",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"_id\": \"6614a8b7e4b0123456789abc\",\n    \"name\": \"Aarav Sharma\",\n    \"email\": \"aarav.sharma@example.com\",\n    \"phone\": \"+91 98765 43210\",\n    \"userType\": \"Student\",\n    \"interest\": \"DGCA Certified Drone Pilot Training\",\n    \"message\": \"I would like to apply for the upcoming batch of DGCA pilot certification course.\",\n    \"status\": \"New\",\n    \"adminNotes\": \"\",\n    \"createdAt\": \"2026-10-10T05:30:00.000Z\",\n    \"updatedAt\": \"2026-10-10T05:30:00.000Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "5. Update Enquiry Status & Admin Notes (Admin Protected)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-admin-key",
+                "value": "{{adminKey}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Contacted\",\n  \"adminNotes\": \"Called candidate on phone. Shared syllabus and batch schedule starting next Monday.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/enquiries/{{enquiryId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["enquiries", "{{enquiryId}}"]
+            },
+            "description": "Updates the workflow status (New, Contacted, In Progress, Closed) and records internal admin follow-up notes."
+          },
+          "response": [
+            {
+              "name": "200 Success Updated",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Enquiry updated successfully.\",\n  \"data\": {\n    \"_id\": \"6614a8b7e4b0123456789abc\",\n    \"status\": \"Contacted\",\n    \"adminNotes\": \"Called candidate on phone. Shared syllabus and batch schedule starting next Monday.\",\n    \"updatedAt\": \"2026-10-10T05:35:00.000Z\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "name": "6. Delete Enquiry (Admin Protected)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-admin-key",
+                "value": "{{adminKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/enquiries/{{enquiryId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["enquiries", "{{enquiryId}}"]
+            },
+            "description": "Permanently deletes an enquiry record from the database."
+          },
+          "response": [
+            {
+              "name": "200 Success Deleted",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Enquiry record deleted successfully.\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AI Chatbot Engine",
+      "item": [
+        {
+          "name": "7. Chatbot Rule Message Query",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"What services does DroneTV provide?\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/chatbot/message",
+              "host": ["{{baseUrl}}"],
+              "path": ["chatbot", "message"]
+            },
+            "description": "Rule-based natural language processing query handler returning structured bot response, suggested questions, and UI triggers."
+          },
+          "response": [
+            {
+              "name": "200 Success Query",
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"data\": {\n    \"reply\": \"DroneTV provides cutting-edge drone services including Aerial Surveillance & Mapping, Agriculture Crop Monitoring & Spraying, Infrastructure & Thermal Inspection, Aerial Cinematography, and Custom Drone Engineering & Maintenance.\",\n    \"suggestedQuestions\": [\n      \"What courses / training are available?\",\n      \"I am interested in a service.\",\n      \"How can I contact DroneTV?\"\n    ],\n    \"actionTrigger\": \"open_services\"\n  }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
