@@ -133,11 +133,11 @@ export const EnquiryFormModal: React.FC<EnquiryFormModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
-      <div className="glass-panel w-full max-w-lg overflow-hidden border-cyan-500/40 shadow-2xl relative">
+      <div className="glass-panel w-full max-w-lg overflow-hidden border-orange-500/40 shadow-2xl relative">
         {/* Header */}
         <div className="bg-gray-900 border-b border-white/10 px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-cyan-400" />
+            <ShieldCheck className="w-5 h-5 text-orange-400" />
             <h2 className="text-xl font-bold font-heading text-white">Submit Lead Enquiry</h2>
           </div>
           <button
@@ -272,7 +272,7 @@ export const EnquiryFormModal: React.FC<EnquiryFormModalProps> = ({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-primary py-2.5 px-6 text-xs shadow-cyan-500/30 flex items-center gap-2"
+                  className="btn-primary py-2.5 px-6 text-xs shadow-orange-500/30 flex items-center gap-2"
                 >
                   {isSubmitting ? (
                     <span>Submitting...</span>

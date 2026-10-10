@@ -91,7 +91,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
       height: isFloatingDrawer ? '540px' : '640px',
       width: '100%',
       overflow: 'hidden',
-      borderColor: 'rgba(6, 182, 212, 0.35)',
+      borderColor: 'rgba(249, 115, 22, 0.35)',
       boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)',
     }}>
       {/* Header Bar */}
@@ -110,7 +110,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
               width: '38px',
               height: '38px',
               borderRadius: '12px',
-              background: 'linear-gradient(135deg, #06b6d4 0%, #2563eb 100%)',
+              background: 'linear-gradient(135deg, #f97316 0%, #ea580c 50%, #d97706 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -132,7 +132,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
           <div>
             <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-heading)', display: 'flex', alignItems: 'center', gap: '6px' }}>
               DroneTV Assistant
-              <Sparkles style={{ width: '16px', height: '16px', color: '#06b6d4' }} />
+              <Sparkles style={{ width: '16px', height: '16px', color: '#f97316' }} />
             </h3>
             <p style={{ fontSize: '11px', color: '#9ca3af', fontWeight: 500 }}>Rule-Based AI Support • Online</p>
           </div>
@@ -169,7 +169,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
         overflowX: 'auto',
         flexShrink: 0,
       }} className="no-scrollbar">
-        <span style={{ fontSize: '11px', fontWeight: 700, color: '#06b6d4', flexShrink: 0, textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '4px' }}>
+        <span style={{ fontSize: '11px', fontWeight: 700, color: '#f97316', flexShrink: 0, textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '4px' }}>
           <MessageSquare style={{ width: '13px', height: '13px' }} /> Quick Presets:
         </span>
         {PREDEFINED_QUESTIONS.map((q, idx) => (
@@ -227,9 +227,9 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  background: isUser ? '#2563eb' : 'rgba(6, 182, 212, 0.15)',
-                  border: isUser ? 'none' : '1px solid rgba(6, 182, 212, 0.3)',
-                  color: isUser ? '#ffffff' : '#06b6d4',
+                  background: isUser ? '#ea580c' : 'rgba(249, 115, 22, 0.15)',
+                  border: isUser ? 'none' : '1px solid rgba(249, 115, 22, 0.35)',
+                  color: isUser ? '#ffffff' : '#f97316',
                 }}
               >
                 {isUser ? <User style={{ width: '18px', height: '18px' }} /> : <Bot style={{ width: '18px', height: '18px' }} />}
@@ -244,7 +244,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
                     fontSize: '0.9rem',
                     lineHeight: 1.5,
                     background: isUser
-                      ? 'linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)'
+                      ? 'linear-gradient(135deg, #f97316 0%, #d97706 100%)'
                       : 'rgba(17, 24, 39, 0.95)',
                     color: isUser ? '#ffffff' : '#e2e8f0',
                     border: isUser ? 'none' : '1px solid rgba(255, 255, 255, 0.1)',
@@ -264,9 +264,9 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
                         onClick={() => handleSendMessage(sq)}
                         style={{
                           fontSize: '11px',
-                          color: '#7dd3fc',
-                          background: 'rgba(6, 182, 212, 0.1)',
-                          border: '1px solid rgba(6, 182, 212, 0.3)',
+                          color: '#fed7aa',
+                          background: 'rgba(249, 115, 22, 0.12)',
+                          border: '1px solid rgba(249, 115, 22, 0.3)',
                           padding: '4px 10px',
                           borderRadius: '8px',
                           cursor: 'pointer',
@@ -276,7 +276,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
                           textAlign: 'left',
                         }}
                       >
-                        <ChevronRight style={{ width: '12px', height: '12px', color: '#06b6d4', flexShrink: 0 }} />
+                        <ChevronRight style={{ width: '12px', height: '12px', color: '#f97316', flexShrink: 0 }} />
                         {sq}
                       </button>
                     ))}
@@ -307,13 +307,13 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({
         {/* Typing indicator */}
         {isTyping && (
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '34px', height: '34px', borderRadius: '10px', background: 'rgba(6, 182, 212, 0.15)', border: '1px solid rgba(6, 182, 212, 0.3)', color: '#06b6d4', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '34px', height: '34px', borderRadius: '10px', background: 'rgba(249, 115, 22, 0.15)', border: '1px solid rgba(249, 115, 22, 0.3)', color: '#f97316', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Bot style={{ width: '18px', height: '18px', margin: 'auto' }} />
             </div>
             <div style={{ background: 'rgba(17, 24, 39, 0.9)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '10px 16px', borderRadius: '4px 16px 16px 16px', display: 'flex', gap: '6px' }}>
-              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#06b6d4' }} />
-              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#06b6d4' }} />
-              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#06b6d4' }} />
+              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f97316' }} />
+              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f97316' }} />
+              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f97316' }} />
             </div>
           </div>
         )}

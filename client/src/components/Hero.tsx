@@ -29,16 +29,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChat, onOpenEnquiry, onExplore
             gap: '8px',
             padding: '6px 14px',
             borderRadius: '999px',
-            background: 'rgba(6, 182, 212, 0.1)',
-            border: '1px solid rgba(6, 182, 212, 0.3)',
-            color: '#38bdf8',
+            background: 'rgba(249, 115, 22, 0.12)',
+            border: '1px solid rgba(249, 115, 22, 0.35)',
+            color: '#fb923c',
             fontSize: '0.75rem',
             fontWeight: 700,
             width: 'fit-content',
             textTransform: 'uppercase',
             letterSpacing: '0.05em',
           }}>
-            <Zap style={{ width: '14px', height: '14px', color: '#06b6d4' }} />
+            <Zap style={{ width: '14px', height: '14px', color: '#f97316' }} />
             Next-Gen Drone Operations & AI Assistant
           </div>
 
@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChat, onOpenEnquiry, onExplore
               className="btn-secondary"
               style={{ padding: '14px 28px', fontSize: '1rem' }}
             >
-              Submit Lead Enquiry <ArrowRight style={{ width: '18px', height: '18px', color: '#06b6d4' }} />
+              Submit Lead Enquiry <ArrowRight style={{ width: '18px', height: '18px', color: '#f97316' }} />
             </button>
           </div>
 
@@ -91,15 +91,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChat, onOpenEnquiry, onExplore
             fontWeight: 500,
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <CheckCircle2 style={{ width: '18px', height: '18px', color: '#06b6d4' }} />
+              <CheckCircle2 style={{ width: '18px', height: '18px', color: '#f97316' }} />
               <span>Rule-Based Bot Support</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <CheckCircle2 style={{ width: '18px', height: '18px', color: '#06b6d4' }} />
+              <CheckCircle2 style={{ width: '18px', height: '18px', color: '#f97316' }} />
               <span>DGCA Aligned Syllabi</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <CheckCircle2 style={{ width: '18px', height: '18px', color: '#06b6d4' }} />
+              <CheckCircle2 style={{ width: '18px', height: '18px', color: '#f97316' }} />
               <span>Instant Lead Capture</span>
             </div>
           </div>
@@ -112,7 +112,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChat, onOpenEnquiry, onExplore
             display: 'flex',
             flexDirection: 'column',
             gap: '1.5rem',
-            borderColor: 'rgba(6, 182, 212, 0.35)',
+            borderColor: 'rgba(249, 115, 22, 0.35)',
           }}>
             {/* Header Badge */}
             <div style={{
@@ -146,8 +146,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChat, onOpenEnquiry, onExplore
                   width: '32px',
                   height: '32px',
                   borderRadius: '8px',
-                  background: 'rgba(6, 182, 212, 0.2)',
-                  color: '#06b6d4',
+                  background: 'rgba(249, 115, 22, 0.2)',
+                  color: '#f97316',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -162,19 +162,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChat, onOpenEnquiry, onExplore
               </div>
 
               <div style={{
-                background: 'rgba(6, 182, 212, 0.12)',
+                background: 'rgba(249, 115, 22, 0.12)',
                 padding: '14px',
                 borderRadius: '12px',
-                border: '1px solid rgba(6, 182, 212, 0.3)',
+                border: '1px solid rgba(249, 115, 22, 0.3)',
                 fontSize: '0.85rem',
-                color: '#7dd3fc',
+                color: '#fed7aa',
                 marginLeft: '1.5rem',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
               }}>
                 <span>User: "I am a student interested in DGCA pilot training"</span>
-                <span style={{ fontSize: '10px', color: '#38bdf8', opacity: 0.8 }}>Just now</span>
+                <span style={{ fontSize: '10px', color: '#fb923c', opacity: 0.8 }}>Just now</span>
               </div>
             </div>
 
@@ -182,7 +182,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenChat, onOpenEnquiry, onExplore
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', paddingTop: '4px' }}>
               <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '14px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.06)', textAlign: 'center' }}>
                 <div style={{ fontSize: '1.5rem', fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
-                  <Users style={{ width: '18px', height: '18px', color: '#06b6d4' }} /> 1,250+
+                  <Users style={{ width: '18px', height: '18px', color: '#f97316' }} /> 1,250+
                 </div>
                 <div style={{ fontSize: '0.75rem', color: '#9ca3af', marginTop: '2px' }}>Leads Captured</div>
               </div>

@@ -63,7 +63,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[#0b0f19] text-gray-100 font-sans selection:bg-cyan-500 selection:text-white">
+    <div className="min-h-screen flex flex-col justify-between bg-[#0b0f19] text-gray-100 font-sans selection:bg-orange-500 selection:text-white">
       {/* Navigation header */}
       <Navbar
         activeTab={activeTab}
@@ -96,7 +96,7 @@ export const App: React.FC = () => {
           ) : (
             <button
               onClick={() => setIsFloatingChatOpen(true)}
-              className="group flex items-center gap-3 px-5 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-heading font-bold shadow-lg shadow-cyan-500/40 hover:scale-105 transition-all"
+              className="group flex items-center gap-3 px-5 py-3.5 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-amber-600 text-white font-heading font-bold shadow-lg shadow-orange-500/40 hover:scale-105 transition-all"
             >
               <Bot className="w-6 h-6 animate-pulse" />
               <span className="text-sm tracking-wide">Ask DroneTV Bot</span>

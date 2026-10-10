@@ -57,7 +57,7 @@ export const ContactPage: React.FC = () => {
   return (
     <div className="space-y-12 pb-16 animate-fade-in max-w-5xl mx-auto">
       <div className="text-center space-y-3">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold uppercase tracking-wider">
           <Phone className="w-3.5 h-3.5" /> Direct Support & Lead Desk
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">Contact DroneTV Engineering</h1>
@@ -69,12 +69,12 @@ export const ContactPage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         {/* Contact info side */}
         <div className="md:col-span-5 space-y-6">
-          <div className="glass-panel p-6 space-y-6 border-cyan-500/30">
+          <div className="glass-panel p-6 space-y-6 border-orange-500/30">
             <h3 className="text-xl font-bold font-heading text-white">Headquarters & Desk</h3>
 
             <div className="space-y-4 text-sm">
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
@@ -85,7 +85,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -96,7 +96,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>

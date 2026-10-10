@@ -9,7 +9,7 @@ interface CourseCardProps {
 
 export const CourseCard: React.FC<CourseCardProps> = ({ course, onEnroll }) => {
   return (
-    <div className="glass-panel p-6 flex flex-col justify-between h-full group hover:border-blue-500/40">
+    <div className="glass-panel p-6 flex flex-col justify-between h-full group hover:border-amber-500/40">
       <div className="space-y-4">
         {/* Header badges */}
         <div className="flex items-center justify-between">
@@ -19,13 +19,13 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onEnroll }) => {
           </span>
         </div>
 
-        <h3 className="text-xl font-bold font-heading text-white group-hover:text-blue-400 transition-colors">
+        <h3 className="text-xl font-bold font-heading text-white group-hover:text-amber-400 transition-colors">
           {course.title}
         </h3>
 
         <div className="flex items-center gap-4 text-xs text-gray-300 py-1">
           <div className="flex items-center gap-1.5">
-            <Clock className="w-3.5 h-3.5 text-cyan-400" />
+            <Clock className="w-3.5 h-3.5 text-amber-400" />
             <span>{course.duration}</span>
           </div>
           <div className="flex items-center gap-1.5">

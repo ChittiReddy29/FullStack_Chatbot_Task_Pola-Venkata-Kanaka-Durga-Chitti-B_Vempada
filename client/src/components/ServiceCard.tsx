@@ -8,25 +8,25 @@ interface ServiceCardProps {
 }
 
 const iconMap: Record<string, React.ReactNode> = {
-  surveillance: <Eye className="w-6 h-6 text-cyan-400" />,
+  surveillance: <Eye className="w-6 h-6 text-orange-400" />,
   agriculture: <Compass className="w-6 h-6 text-emerald-400" />,
-  inspection: <Shield className="w-6 h-6 text-purple-400" />,
-  cinematography: <Camera className="w-6 h-6 text-amber-400" />,
+  inspection: <Shield className="w-6 h-6 text-amber-400" />,
+  cinematography: <Camera className="w-6 h-6 text-orange-400" />,
   repair: <Wrench className="w-6 h-6 text-rose-400" />,
 };
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelectService }) => {
   return (
-    <div className="glass-panel p-6 flex flex-col justify-between h-full group hover:border-cyan-500/40">
+    <div className="glass-panel p-6 flex flex-col justify-between h-full group hover:border-orange-500/40">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-            {iconMap[service.icon] || <Shield className="w-6 h-6 text-cyan-400" />}
+            {iconMap[service.icon] || <Shield className="w-6 h-6 text-orange-400" />}
           </div>
           <span className="badge badge-new">{service.badge}</span>
         </div>
 
-        <h3 className="text-xl font-bold font-heading text-white group-hover:text-cyan-400 transition-colors">
+        <h3 className="text-xl font-bold font-heading text-white group-hover:text-orange-400 transition-colors">
           {service.title}
         </h3>
 
@@ -39,7 +39,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelectServi
           <ul className="space-y-1.5 text-xs text-gray-300">
             {service.features.map((feat, idx) => (
               <li key={idx} className="flex items-center gap-2">
-                <CheckCircle className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                <CheckCircle className="w-3.5 h-3.5 text-orange-400 shrink-0" />
                 <span>{feat}</span>
               </li>
             ))}

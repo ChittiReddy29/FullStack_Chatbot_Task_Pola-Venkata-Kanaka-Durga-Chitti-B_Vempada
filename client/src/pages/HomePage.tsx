@@ -85,7 +85,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* Why Choose DroneTV Section */}
       <section className="container">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold border border-cyan-500/20">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-semibold border border-orange-500/20">
             <ShieldCheck className="w-3.5 h-3.5" /> Industry Standards
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
@@ -97,8 +97,8 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="glass-panel p-6 space-y-3 border-cyan-500/20 hover:border-cyan-500/40">
-            <div className="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+          <div className="glass-panel p-6 space-y-3 border-orange-500/20 hover:border-orange-500/40">
+            <div className="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold">
               <Bot className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold font-heading text-white">24/7 Rule-Based AI Assistant</h3>
@@ -107,8 +107,8 @@ export const HomePage: React.FC<HomePageProps> = ({
             </p>
           </div>
 
-          <div className="glass-panel p-6 space-y-3 border-blue-500/20 hover:border-blue-500/40">
-            <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
+          <div className="glass-panel p-6 space-y-3 border-amber-500/20 hover:border-amber-500/40">
+            <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
               <Zap className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold font-heading text-white">End-to-End REST Lead Capture</h3>
@@ -133,12 +133,12 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="container space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-4">
           <div>
-            <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider">Commercial Offerings</span>
+            <span className="text-xs font-semibold text-orange-400 uppercase tracking-wider">Commercial Offerings</span>
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-white mt-1">Featured Drone Services</h2>
           </div>
           <button
             onClick={() => setActiveTab('services')}
-            className="text-xs font-semibold text-cyan-400 hover:text-white flex items-center gap-1"
+            className="text-xs font-semibold text-orange-400 hover:text-white flex items-center gap-1"
           >
             View All Services <ArrowRight className="w-3.5 h-3.5" />
           </button>
@@ -159,12 +159,12 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="container space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-4">
           <div>
-            <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider">Pilot Academy</span>
+            <span className="text-xs font-semibold text-amber-400 uppercase tracking-wider">Pilot Academy</span>
             <h2 className="text-2xl sm:text-3xl font-bold font-heading text-white mt-1">Featured Pilot Training</h2>
           </div>
           <button
             onClick={() => setActiveTab('courses')}
-            className="text-xs font-semibold text-blue-400 hover:text-white flex items-center gap-1"
+            className="text-xs font-semibold text-amber-400 hover:text-white flex items-center gap-1"
           >
             View All Courses <ArrowRight className="w-3.5 h-3.5" />
           </button>

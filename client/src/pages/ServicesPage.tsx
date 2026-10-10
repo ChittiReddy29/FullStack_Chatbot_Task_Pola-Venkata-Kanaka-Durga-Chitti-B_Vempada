@@ -94,7 +94,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiryWithInt
     <div className="space-y-12 pb-16 animate-fade-in">
       {/* Header section */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold uppercase tracking-wider">
           <ShieldCheck className="w-4 h-4" /> Commercial Drone Solutions
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
@@ -113,7 +113,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenEnquiryWithInt
             onClick={() => setFilterCategory(cat)}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all whitespace-nowrap ${
               filterCategory === cat
-                ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 shadow-sm'
+                ? 'bg-orange-500/20 text-orange-400 border border-orange-500/40 shadow-sm'
                 : 'bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white border border-white/5'
             }`}
           >

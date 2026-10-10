@@ -142,16 +142,16 @@ export const AdminDashboard: React.FC = () => {
   // Render Login Lock Screen if unauthorized
   if (!isAuthorized) {
     return (
-      <div className="max-w-md mx-auto my-12 glass-panel p-8 space-y-6 border-cyan-500/30">
+      <div className="max-w-md mx-auto my-12 glass-panel p-8 space-y-6 border-orange-500/30">
         <div className="text-center space-y-2">
-          <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 mx-auto flex items-center justify-center">
+          <div className="w-14 h-14 rounded-2xl bg-orange-500/20 border border-orange-500/30 text-orange-400 mx-auto flex items-center justify-center">
             <Key className="w-7 h-7" />
           </div>
           <h2 className="text-2xl font-bold font-heading text-white">Admin Authentication</h2>
           <p className="text-xs text-gray-400">
             Enter your secret admin key to access full lead CRUD management.
           </p>
-          <div className="text-[11px] text-cyan-400 bg-cyan-950/60 p-2 rounded-lg border border-cyan-500/20 font-mono">
+          <div className="text-[11px] text-orange-400 bg-orange-950/60 p-2 rounded-lg border border-orange-500/20 font-mono">
             Default Key: <span className="font-bold">droneTV_admin_key_2026</span>
           </div>
         </div>
@@ -188,7 +188,7 @@ export const AdminDashboard: React.FC = () => {
       {/* Header section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
         <div>
-          <div className="flex items-center gap-2 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-orange-400 text-xs font-semibold uppercase tracking-wider mb-1">
             <ShieldCheck className="w-4 h-4" /> Admin Lead Operations Portal
           </div>
           <h1 className="text-3xl font-extrabold font-heading text-white">Enquiry Management Dashboard</h1>
@@ -222,9 +222,9 @@ export const AdminDashboard: React.FC = () => {
           <div className="text-2xl font-bold font-heading text-white mt-1">{totalCount}</div>
         </div>
 
-        <div className="glass-panel p-4 border-cyan-500/30 text-center">
-          <div className="text-cyan-400 text-xs font-medium">New Enquiries</div>
-          <div className="text-2xl font-bold font-heading text-cyan-400 mt-1">{stats.New}</div>
+        <div className="glass-panel p-4 border-orange-500/30 text-center">
+          <div className="text-orange-400 text-xs font-medium">New Enquiries</div>
+          <div className="text-2xl font-bold font-heading text-orange-400 mt-1">{stats.New}</div>
         </div>
 
         <div className="glass-panel p-4 border-amber-500/30 text-center">
@@ -260,7 +260,7 @@ export const AdminDashboard: React.FC = () => {
         {/* Filters */}
         <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
           <div className="flex items-center gap-1.5 text-xs text-gray-400">
-            <Filter className="w-3.5 h-3.5 text-cyan-400" />
+            <Filter className="w-3.5 h-3.5 text-orange-400" />
             <span>Filter By:</span>
           </div>
 
@@ -317,7 +317,7 @@ export const AdminDashboard: React.FC = () => {
                     <td className="py-3.5 px-4 space-y-0.5">
                       <div className="font-semibold text-white text-sm">{item.name}</div>
                       <div className="text-gray-400">{item.email}</div>
-                      <div className="text-cyan-400 font-mono text-[11px]">{item.phone}</div>
+                      <div className="text-orange-400 font-mono text-[11px]">{item.phone}</div>
                     </td>
 
                     {/* User Type Badge */}
@@ -347,7 +347,7 @@ export const AdminDashboard: React.FC = () => {
                         onChange={(e) => handleStatusChange(item._id!, e.target.value as EnquiryStatus)}
                         className={`text-xs py-1 px-2.5 rounded-lg border bg-gray-950 font-semibold cursor-pointer outline-none ${
                           item.status === 'New'
-                            ? 'text-cyan-400 border-cyan-500/30'
+                            ? 'text-orange-400 border-orange-500/30'
                             : item.status === 'Contacted'
                             ? 'text-amber-400 border-amber-500/30'
                             : item.status === 'In Progress'
@@ -375,7 +375,7 @@ export const AdminDashboard: React.FC = () => {
                           setAdminNoteInput(item.adminNotes || '');
                           setIsDetailModalOpen(true);
                         }}
-                        className="p-1.5 rounded-lg bg-white/5 hover:bg-cyan-500/20 text-gray-300 hover:text-cyan-400 border border-white/10 transition-colors"
+                        className="p-1.5 rounded-lg bg-white/5 hover:bg-orange-500/20 text-gray-300 hover:text-orange-400 border border-white/10 transition-colors"
                         title="View Full Details"
                       >
                         <Eye className="w-4 h-4" />
@@ -400,7 +400,7 @@ export const AdminDashboard: React.FC = () => {
       {/* Details View Modal */}
       {isDetailModalOpen && selectedEnquiry && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
-          <div className="glass-panel w-full max-w-2xl overflow-hidden border-cyan-500/40 shadow-2xl relative">
+          <div className="glass-panel w-full max-w-2xl overflow-hidden border-orange-500/40 shadow-2xl relative">
             <div className="bg-gray-900 border-b border-white/10 px-6 py-4 flex items-center justify-between">
               <h3 className="text-xl font-bold font-heading text-white flex items-center gap-2">
                 Enquiry Detail #{selectedEnquiry._id?.substring(0, 8)}
@@ -427,7 +427,7 @@ export const AdminDashboard: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-xs text-gray-400">Email Address</span>
-                  <div className="text-cyan-400">{selectedEnquiry.email}</div>
+                  <div className="text-orange-400">{selectedEnquiry.email}</div>
                 </div>
                 <div>
                   <span className="text-xs text-gray-400">Phone Number</span>
@@ -459,7 +459,7 @@ export const AdminDashboard: React.FC = () => {
                       onClick={() => handleStatusChange(selectedEnquiry._id!, st)}
                       className={`py-1.5 px-3 rounded-lg text-xs font-semibold border transition-all ${
                         selectedEnquiry.status === st
-                          ? 'bg-cyan-500/20 text-cyan-400 border-cyan-500/50 shadow-sm'
+                          ? 'bg-orange-500/20 text-orange-400 border-orange-500/50 shadow-sm'
                           : 'bg-white/5 text-gray-400 border-white/10 hover:text-white'
                       }`}
                     >

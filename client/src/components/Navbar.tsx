@@ -50,18 +50,18 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenE
             width: '42px',
             height: '42px',
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, #06b6d4 0%, #2563eb 100%)',
+            background: 'linear-gradient(135deg, #f97316 0%, #ea580c 50%, #d97706 100%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 4px 14px rgba(6, 182, 212, 0.3)',
+            boxShadow: '0 4px 14px rgba(249, 115, 22, 0.35)',
           }}>
             <Bot style={{ width: '24px', height: '24px', color: '#ffffff' }} />
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.25rem', color: '#ffffff' }}>DroneTV</span>
-              <span style={{ fontSize: '0.65rem', padding: '2px 8px', borderRadius: '999px', background: 'rgba(6, 182, 212, 0.15)', color: '#38bdf8', border: '1px solid rgba(6, 182, 212, 0.3)', fontWeight: 700 }}>AI LABS</span>
+              <span style={{ fontSize: '0.65rem', padding: '2px 8px', borderRadius: '999px', background: 'rgba(249, 115, 22, 0.15)', color: '#fb923c', border: '1px solid rgba(249, 115, 22, 0.3)', fontWeight: 700 }}>AI LABS</span>
             </div>
             <p style={{ fontSize: '10px', color: '#9ca3af', fontWeight: 600, letterSpacing: '0.05em' }}>AERIAL INTELLIGENCE PLATFORM</p>
           </div>
@@ -93,13 +93,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenE
                   fontSize: '0.875rem',
                   fontWeight: 600,
                   cursor: 'pointer',
-                  border: isActive ? '1px solid rgba(6, 182, 212, 0.4)' : '1px solid transparent',
-                  background: isActive ? 'rgba(6, 182, 212, 0.15)' : 'transparent',
-                  color: isActive ? '#38bdf8' : '#d1d5db',
+                  border: isActive ? '1px solid rgba(249, 115, 22, 0.4)' : '1px solid transparent',
+                  background: isActive ? 'rgba(249, 115, 22, 0.15)' : 'transparent',
+                  color: isActive ? '#fb923c' : '#d1d5db',
                   transition: 'all 0.2s ease',
                 }}
               >
-                <Icon style={{ width: '16px', height: '16px', color: isActive ? '#38bdf8' : '#9ca3af' }} />
+                <Icon style={{ width: '16px', height: '16px', color: isActive ? '#fb923c' : '#9ca3af' }} />
                 {item.label}
               </button>
             );

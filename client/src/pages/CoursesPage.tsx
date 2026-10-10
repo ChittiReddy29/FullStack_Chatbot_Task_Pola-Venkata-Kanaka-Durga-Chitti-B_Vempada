@@ -99,7 +99,7 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ onOpenEnquiryWithInter
     <div className="space-y-12 pb-16 animate-fade-in">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold uppercase tracking-wider">
           <GraduationCap className="w-4 h-4" /> Pilot Academy & Training
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold font-heading text-white">
@@ -112,14 +112,14 @@ export const CoursesPage: React.FC<CoursesPageProps> = ({ onOpenEnquiryWithInter
 
       {/* Academy Perks */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="glass-panel p-4 text-center border-blue-500/20">
-          <Award className="w-6 h-6 text-blue-400 mx-auto mb-2" />
+        <div className="glass-panel p-4 text-center border-amber-500/20">
+          <Award className="w-6 h-6 text-amber-400 mx-auto mb-2" />
           <div className="font-bold text-white text-sm font-heading">DGCA Approved</div>
           <div className="text-[11px] text-gray-400">Official Pilot Certification</div>
         </div>
 
-        <div className="glass-panel p-4 text-center border-cyan-500/20">
-          <BookOpen className="w-6 h-6 text-cyan-400 mx-auto mb-2" />
+        <div className="glass-panel p-4 text-center border-orange-500/20">
+          <BookOpen className="w-6 h-6 text-orange-400 mx-auto mb-2" />
           <div className="font-bold text-white text-sm font-heading">Simulators & Live Flight</div>
           <div className="text-[11px] text-gray-400">Real flight log hours</div>
         </div>
