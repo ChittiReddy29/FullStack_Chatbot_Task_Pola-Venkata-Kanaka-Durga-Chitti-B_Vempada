@@ -1,0 +1,29 @@
+{
+  "name": "dronetv-fullstack-assistant",
+  "version": "1.0.0",
+  "description": "DroneTV AI Support & Lead Assistant - Full Stack Web Application",
+  "main": "server/src/index.ts",
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "seed": "npm --prefix server run seed",
+    "start": "npm --prefix server start"
+  },
+  "keywords": [
+    "drone",
+    "react",
+    "typescript",
+    "express",
+    "mongodb",
+    "chatbot",
+    "fullstack"
+  ],
+  "author": "Full Stack Developer Candidate",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
